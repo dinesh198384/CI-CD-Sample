@@ -1,4 +1,4 @@
-name: CI/CD-Pipeline
+name: CI/CD
 
 on:
   push:
@@ -18,7 +18,7 @@ jobs:
       - name: Build, tag, and push image to DockerHub
         env:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          IMAGE_NAME: helloworld
+          IMAGE_NAME: helloworld1
         run: |
           docker build -t $DOCKERHUB_USERNAME/$IMAGE_NAME .
           docker push $DOCKERHUB_USERNAME/$IMAGE_NAME:latest
